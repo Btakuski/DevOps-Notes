@@ -148,4 +148,19 @@ Worker Node
 - Pod Network: Internal virtual network that spans all the nodes in a cluster to which all the pods can connect to. Using this network, pods can communicate with each other across nodes
 - View kube-proxy pods:
   - `kubectl get daemonset -n kube-system` 
+
+### Pods
+- Kubernetes does not deploy containers directly to the worker nodes, they are encapsulated into a Kubernetes object called Pods 
+- A Pod is a single instance of an application
+- A Pod is the smallest object you can create in Kubernetes
+
+#### Multi-Container Pods
+- A single Pod can have multiple containers, albeit they are usually not multiple containers of the same kind of application 
+- The most common scenario is having helper containers alongside application containers in a Pod
+
+#### Deploying Pods
+```sh
+kubectl run nginx --image nginx # Pod created
+kubectl get pods                # Get Pods 
+```
 ___
